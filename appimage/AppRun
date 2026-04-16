@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# SAI AppRun entrypoint
+# This is executed inside the mounted AppImage
+
+set -euo pipefail
+
+APPDIR="$(dirname "$(readlink -f "$0")")"
+
+echo "[SAI] Starting application from: $APPDIR"
+
+export PATH="$APPDIR/usr/bin:$PATH"
+export LD_LIBRARY_PATH="$APPDIR/usr/lib:$LD_LIBRARY_PATH"
+
+# Execute main binary
+if [[ -x "$APPDIR/usr/bin/app" ]]; then
+  exec "$APPDIR/usr/bin/app"
+elif [[ -x "$APPDIR/AppRun.sh" ]]; then
+  exec "$APPDIR/AppRun.sh"
+else
+  echo "[SAI] ERROR: No executable entrypoint found"
+  exit 1
+fi
