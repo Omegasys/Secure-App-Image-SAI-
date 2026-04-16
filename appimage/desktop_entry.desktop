@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=SAI Application
+Comment=Secure App Image (SAI) Application
+Exec=AppRun
+Icon=sai
+Type=Application
+Categories=Utility;
+Terminal=false
