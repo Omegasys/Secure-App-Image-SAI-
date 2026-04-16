@@ -60,3 +60,17 @@ Blocked syscalls:
 ## Example bubblewrap model
 
 Conceptually:
+bwrap
+--unshare-all
+--die-with-parent
+--ro-bind /app /app
+--tmpfs /tmp
+--proc /proc
+--dev /dev/null
+
+
+---
+
+## Security Philosophy
+
+> The sandbox is the real security boundary. Not the AppImage.
