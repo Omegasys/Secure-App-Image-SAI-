@@ -1,0 +1,18 @@
+{
+  "default_action": "SCMP_ACT_ALLOW",
+  "syscalls": [
+    {
+      "names": [
+        "mount",
+        "umount2",
+        "ptrace",
+        "kexec_load",
+        "init_module",
+        "finit_module",
+        "bpf",
+        "perf_event_open"
+      ],
+      "action": "SCMP_ACT_ERRNO"
+    }
+  ]
+}
