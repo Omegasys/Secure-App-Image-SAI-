@@ -1,0 +1,37 @@
+{
+  "version": "1.0",
+  "default_policy": "deny",
+
+  "permissions": {
+    "network": {
+      "type": "enum",
+      "values": ["none", "local", "restricted", "full"],
+      "default": "none"
+    },
+
+    "filesystem": {
+      "home": {
+        "type": "enum",
+        "values": ["none", "read", "write"],
+        "default": "none"
+      },
+      "app": {
+        "type": "enum",
+        "values": ["read", "write"],
+        "default": "read"
+      }
+    },
+
+    "devices": {
+      "camera": "bool",
+      "microphone": "bool",
+      "gpu": "bool",
+      "usb": "bool"
+    },
+
+    "system": {
+      "ipc": "bool",
+      "process_visibility": "bool"
+    }
+  }
+}
