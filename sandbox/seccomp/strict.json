@@ -1,0 +1,38 @@
+{
+  "default_action": "SCMP_ACT_ERRNO",
+  "syscalls": [
+    {
+      "names": [
+        "read",
+        "write",
+        "openat",
+        "close",
+        "mmap",
+        "mprotect",
+        "brk",
+        "rt_sigaction",
+        "rt_sigprocmask",
+        "exit",
+        "exit_group",
+        "futex",
+        "clock_gettime",
+        "nanosleep",
+        "execve"
+      ],
+      "action": "SCMP_ACT_ALLOW"
+    },
+    {
+      "names": [
+        "mount",
+        "umount2",
+        "ptrace",
+        "process_vm_readv",
+        "process_vm_writev",
+        "init_module",
+        "delete_module",
+        "bpf"
+      ],
+      "action": "SCMP_ACT_ERRNO"
+    }
+  ]
+}
